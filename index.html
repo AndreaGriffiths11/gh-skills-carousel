@@ -110,7 +110,6 @@
             color: #666;
         }
         
-        /* Swipe areas */
         .swipe-left, .swipe-right {
             position: absolute;
             top: 0;
@@ -142,63 +141,61 @@
         </div>
         
         <div class="slide active">
-            <h2>🚀 GitHub just changed the agent game</h2>
-            <p>Your terminal can now install and run AI skills like apps</p>
-            <p style="color: #667eea; font-weight: bold;">#GitHubSkills #AI</p>
+            <h2>GitHub changed how agents work</h2>
+            <p>Your terminal can install and run AI skills like apps.</p>
+            <p>Here's what that means.</p>
         </div>
         
         <div class="slide">
-            <h2>Think App Store for AI agents</h2>
-            <p>• Install skills: <code>gh skill install</code></p>
-            <p>• Run tools: <code>gh skill run</code></p>
-            <p>• Discover capabilities: <code>gh skill list</code></p>
-            <p>Works with any AI coding agent</p>
+            <h2>Think App Store for agents</h2>
+            <p><code>gh skill install</code></p>
+            <p><code>gh skill run</code></p>
+            <p><code>gh skill list</code></p>
+            <p>Works with any coding agent you're using.</p>
         </div>
         
         <div class="slide">
-            <h2>The Problem It Solves</h2>
-            <p><strong>Before:</strong> AI agents had no standard way to use tools</p>
-            <p><strong>After:</strong> Universal skill system with proper APIs</p>
-            <p style="margin-top: 20px;">No more "AI, please guess how to use this random CLI"</p>
+            <h2>Here's what changed</h2>
+            <p><strong>Before:</strong> AI agents guessed at your tools</p>
+            <p><strong>Now:</strong> They use proper APIs</p>
+            <p>No more "please figure out this CLI for me"</p>
         </div>
         
         <div class="slide">
-            <h2>Real Example</h2>
+            <h2>In practice</h2>
             <p><code>gh skill install github/code-quality</code></p>
-            <p style="margin: 15px 0;">Agent can now use it:</p>
+            <p>Now your agent can run:</p>
             <p><code>gh skill run code-quality --check ./src</code></p>
-            <p style="margin-top: 20px;">Or let your agent discover it automatically</p>
+            <p>Or discover it automatically when you ask for code reviews.</p>
         </div>
         
         <div class="slide">
-            <h2>Why This Matters</h2>
-            <p>This isn't just a feature launch</p>
-            <p><strong>It's GitHub becoming the runtime for AI agents</strong></p>
-            <p style="margin-top: 20px;">Every skill = new superpower for your coding assistant</p>
+            <h2>Why this matters</h2>
+            <p>GitHub isn't adding a feature.</p>
+            <p>They're becoming the runtime for AI agents.</p>
+            <p>Every new skill = new capabilities for your coding assistant.</p>
         </div>
         
         <div class="slide">
-            <h2>The Bigger Picture</h2>
-            <p>We're moving from:</p>
-            <p style="margin: 10px 0;">❌ "AI, try to figure this out"</p>
-            <p>✅ "AI, use this proper tool"</p>
-            <p style="margin-top: 20px; font-weight: bold;">Skills + MCP = the future of agent workflows</p>
+            <h2>The bigger shift</h2>
+            <p>From: "AI, try to figure this out"</p>
+            <p>To: "AI, use this proper tool"</p>
+            <p>Skills + MCP = structured agent workflows</p>
         </div>
         
         <div class="slide">
-            <h2>Try It Now</h2>
+            <h2>Try it now</h2>
             <p><code>gh skill list</code></p>
             <p><code>gh skill install [name]</code></p>
             <p><code>gh skill run [name] --help</code></p>
-            <p style="margin-top: 20px;">Public preview available now!</p>
-            <p>What skills will you build? 🤖</p>
+            <p>Public preview is live. What will you build?</p>
         </div>
         
         <div class="slide">
-            <h2>Ready to level up your AI workflow?</h2>
-            <p>👉 Try <code>gh skill</code> today</p>
-            <p>👉 Follow for more AI + GitHub tips</p>
-            <p>👉 What skill should GitHub build next?</p>
+            <h2>What's next</h2>
+            <p>Try <code>gh skill</code> in your workflow</p>
+            <p>Follow for more practical AI + GitHub updates</p>
+            <p>What skill should GitHub prioritize next?</p>
         </div>
         
         <div class="navigation">
@@ -247,13 +244,11 @@
             showSlide(n);
         }
         
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
             if (e.key === 'ArrowLeft') prevSlide();
         });
         
-        // Touch/swipe support
         let startX = 0;
         let startY = 0;
         
@@ -271,7 +266,6 @@
             let diffX = startX - endX;
             let diffY = startY - endY;
             
-            // Only horizontal swipes
             if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
                 if (diffX > 0) nextSlide();
                 else prevSlide();
@@ -280,9 +274,6 @@
             startX = 0;
             startY = 0;
         });
-        
-        // Auto-advance (optional)
-        // setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
