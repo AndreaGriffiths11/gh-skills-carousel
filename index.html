@@ -137,58 +137,52 @@
 <body>
     <div class="carousel-container">
         <div class="slide-counter">
-            <span id="current">1</span> / 8
+            <span id="current">1</span> / 7
         </div>
         
         <div class="slide active">
-            <h2>The SKILL.md pain</h2>
-            <p>Developers have been using SKILL.md files for months.</p>
-            <p>The annoying part: copying files manually like it's 2012.</p>
-        </div>
-        
-        <div class="slide">
-            <h2>GitHub shipped a fix</h2>
-            <p><code>gh skill</code> — a package manager for agent skills.</p>
-            <p>Install skills like npm packages.</p>
+            <h2>gh skill shipped April 16</h2>
+            <p>Package manager for agent instructions.</p>
+            <p>This one's headed somewhere good.</p>
         </div>
         
         <div class="slide">
             <h2>What are agent skills</h2>
-            <p>SKILL.md files with instructions that teach AI agents specialized tasks.</p>
-            <p>Works across Copilot, Claude Code, Cursor, and Codex.</p>
+            <p>Instruction sets that teach AI coding agents specialized tasks.</p>
+            <p>Work across Copilot, Claude Code, Cursor, and Codex.</p>
+        </div>
+        
+        <div class="slide">
+            <h2>The missing piece was distribution</h2>
+            <p>Copying files manually like it's 2012.</p>
+            <p><code>gh skill</code> fixes that.</p>
         </div>
         
         <div class="slide">
             <h2>How it works</h2>
             <p><code>gh skill install github/awesome-copilot documentation-writer</code></p>
-            <p>Pin to versions or commits for reproducibility.</p>
+            <p><code>gh skill update --all</code></p>
+            <p>Pin to tags or commits. Provenance travels with the file.</p>
         </div>
         
         <div class="slide">
-            <h2>Supply chain security</h2>
-            <p>Agent skills shape what AI does in your codebase.</p>
-            <p>Modified skills = attack surface.</p>
-            <p>Built-in provenance and integrity checks.</p>
+            <h2>Supply chain hygiene</h2>
+            <p>Skills aren't verified by GitHub and may contain prompt injections.</p>
+            <p>Use <code>gh skill preview</code> before installing.</p>
+            <p>Same hygiene as npm packages, newer attack vectors.</p>
         </div>
         
         <div class="slide">
-            <h2>Why this matters</h2>
-            <p>SKILL.md pattern spreading everywhere.</p>
-            <p>Missing: proper tooling, versioning, dependency management.</p>
-            <p><code>gh skill</code> fills that gap.</p>
+            <h2>What was missing</h2>
+            <p>The SKILL.md pattern has been spreading across the agent ecosystem.</p>
+            <p>Proper tooling—version management, dependency graphs, integrity checks.</p>
         </div>
         
         <div class="slide">
-            <h2>Try it now</h2>
-            <p><code>gh skill install github/awesome-copilot documentation-writer</code></p>
-            <p>Get in before the ecosystem gets crowded.</p>
-        </div>
-        
-        <div class="slide">
-            <h2>What's next</h2>
-            <p>Explore github/awesome-copilot</p>
-            <p>Publish your skills</p>
-            <p>Build what you wish existed</p>
+            <h2>Standards before speed</h2>
+            <p>Start with skills from <code>github/awesome-copilot</code></p>
+            <p>Build what you wish existed.</p>
+            <p>Every time.</p>
         </div>
         
         <div class="navigation">
@@ -199,11 +193,10 @@
             <div class="nav-dot" onclick="goToSlide(4)"></div>
             <div class="nav-dot" onclick="goToSlide(5)"></div>
             <div class="nav-dot" onclick="goToSlide(6)"></div>
-            <div class="nav-dot" onclick="goToSlide(7)"></div>
         </div>
         
         <div class="swipe-left" onclick="prevSlide()"></div>
-        <div class="swipe-right" onclick="nextSlide()</div>
+        <div class="swipe-right" onclick="nextSlide()"></div>
     </div>
     
     <script>
