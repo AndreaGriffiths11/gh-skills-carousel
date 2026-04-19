@@ -142,56 +142,53 @@
         
         <div class="slide active">
             <h2>The SKILL.md pain</h2>
-            <p>"I've been using SKILL.md files for months. Custom instructions for different tasks."</p>
-            <p>"The annoying part has always been distribution — copying files manually like it's 2012."</p>
+            <p>Developers have been using SKILL.md files for months.</p>
+            <p>The annoying part: copying files manually like it's 2012.</p>
         </div>
         
         <div class="slide">
             <h2>GitHub shipped a fix</h2>
-            <p>Last week: <code>gh skill</code></p>
-            <p>A new GitHub CLI command that does for agent skills what npm did for packages.</p>
+            <p><code>gh skill</code> — a package manager for agent skills.</p>
+            <p>Install skills like npm packages.</p>
         </div>
         
         <div class="slide">
             <h2>What are agent skills</h2>
-            <p>SKILL.md files — folders of instructions, scripts, and resources that tell an AI agent how to handle a specific task.</p>
-            <p>Works across GitHub Copilot, Claude Code, Cursor, Codex, and Gemini CLI.</p>
+            <p>SKILL.md files with instructions that teach AI agents specialized tasks.</p>
+            <p>Works across Copilot, Claude Code, Cursor, and Codex.</p>
         </div>
         
         <div class="slide">
             <h2>How it works</h2>
             <p><code>gh skill install github/awesome-copilot documentation-writer</code></p>
-            <p>Pin to a version:</p>
-            <p><code>gh skill install ... --pin v1.2.0</code></p>
-            <p>Or pin to a commit for full reproducibility.</p>
+            <p>Pin to versions or commits for reproducibility.</p>
         </div>
         
         <div class="slide">
-            <h2>The supply chain part</h2>
-            <p>Agent skills are instructions that shape what AI does inside your codebase.</p>
-            <p>A silently modified skill is a real attack surface.</p>
-            <p>Same as a tampered npm package, just newer.</p>
-        </div>
-        
-        <div class="slide">
-            <h2>Built-in security</h2>
-            <p>Provenance metadata written into SKILL.md frontmatter</p>
-            <p>Source repo, ref, and git tree SHA</p>
-            <p>Immutable releases mean content can't be altered after publication</p>
+            <h2>Supply chain security</h2>
+            <p>Agent skills shape what AI does in your codebase.</p>
+            <p>Modified skills = attack surface.</p>
+            <p>Built-in provenance and integrity checks.</p>
         </div>
         
         <div class="slide">
             <h2>Why this matters</h2>
-            <p>The SKILL.md pattern has been spreading quietly for months.</p>
-            <p>What was missing was tooling. No dependency graph, no version history, no integrity check.</p>
-            <p><code>gh skill</code> is the package manager layer the ecosystem needed.</p>
+            <p>SKILL.md pattern spreading everywhere.</p>
+            <p>Missing: proper tooling, versioning, dependency management.</p>
+            <p><code>gh skill</code> fills that gap.</p>
         </div>
         
         <div class="slide">
             <h2>Try it now</h2>
-            <p><code>gh extension upgrade --all</code></p>
             <p><code>gh skill install github/awesome-copilot documentation-writer</code></p>
-            <p>Look at the publish workflow before the ecosystem gets crowded.</p>
+            <p>Get in before the ecosystem gets crowded.</p>
+        </div>
+        
+        <div class="slide">
+            <h2>What's next</h2>
+            <p>Explore github/awesome-copilot</p>
+            <p>Publish your skills</p>
+            <p>Build what you wish existed</p>
         </div>
         
         <div class="navigation">
@@ -206,7 +203,7 @@
         </div>
         
         <div class="swipe-left" onclick="prevSlide()"></div>
-        <div class="swipe-right" onclick="nextSlide()"></div>
+        <div class="swipe-right" onclick="nextSlide()</div>
     </div>
     
     <script>
