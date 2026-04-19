@@ -141,58 +141,57 @@
         </div>
         
         <div class="slide active">
-            <h2>GitHub just shipped skill management</h2>
-            <p>Agent skills now install like npm packages.</p>
-            <p>Here's what changed.</p>
+            <h2>The SKILL.md pain</h2>
+            <p>"I've been using SKILL.md files for months. Custom instructions for different tasks."</p>
+            <p>"The annoying part has always been distribution — copying files manually like it's 2012."</p>
         </div>
         
         <div class="slide">
-            <h2>What is <code>gh skill</code></h2>
-            <p>Package manager for agent skills.</p>
-            <p>Install, update, and publish skills across GitHub Copilot, Claude Code, Cursor, and Codex.</p>
-            <p>Requires GitHub CLI v2.90.0+</p>
+            <h2>GitHub had the same frustration</h2>
+            <p>Last week they shipped <code>gh skill</code></p>
+            <p>A new GitHub CLI command that does for agent skills what npm did for packages.</p>
         </div>
         
         <div class="slide">
-            <h2>Here's what changed</h2>
-            <p><strong>Before:</strong> Copy skill files manually</p>
-            <p><strong>Now:</strong> Install skills like packages</p>
-            <p>No more file copying like it's 2012.</p>
+            <h2>What are agent skills</h2>
+            <p>SKILL.md files — folders of instructions, scripts, and resources that tell an AI agent how to handle a specific task.</p>
+            <p>Works across GitHub Copilot, Claude Code, Cursor, Codex, and Gemini CLI.</p>
         </div>
         
         <div class="slide">
-            <h2>In practice</h2>
+            <h2>What shipped</h2>
             <p><code>gh skill install github/awesome-copilot documentation-writer</code></p>
-            <p>Pin to specific versions:</p>
-            <p><code>gh skill install github/awesome-copilot documentation-writer --pin v1.2.0</code></p>
+            <p>Pin to a version:</p>
+            <p><code>gh skill install ... --pin v1.2.0</code></p>
+            <p>Or pin to a commit for full reproducibility.</p>
+        </div>
+        
+        <div class="slide">
+            <h2>The supply chain part</h2>
+            <p>Agent skills are instructions that shape what AI does inside your codebase.</p>
+            <p>A silently modified skill is a real attack surface.</p>
+            <p>Same as a tampered npm package, just newer.</p>
+        </div>
+        
+        <div class="slide">
+            <h2>Built-in security</h2>
+            <p>Provenance metadata written into SKILL.md frontmatter</p>
+            <p>Source repo, ref, and git tree SHA</p>
+            <p>Immutable releases mean content can't be altered after publication</p>
         </div>
         
         <div class="slide">
             <h2>Why this matters</h2>
-            <p>Agent skills are instructions that shape what AI does in your codebase.</p>
-            <p>Now they have proper versioning, provenance tracking, and integrity checks.</p>
-            <p>Supply chain security for AI agents.</p>
-        </div>
-        
-        <div class="slide">
-            <h2>The bigger picture</h2>
-            <p>From: Sharing skills by copying files</p>
-            <p>To: Distributing skills with dependency management</p>
-            <p>Skills follow the open standard at agentskills.io</p>
+            <p>The SKILL.md pattern has been spreading quietly for months.</p>
+            <p>What was missing was tooling. No dependency graph, no version history, no integrity check.</p>
+            <p><code>gh skill</code> is the package manager layer the ecosystem needed.</p>
         </div>
         
         <div class="slide">
             <h2>Try it now</h2>
             <p><code>gh extension upgrade --all</code></p>
             <p><code>gh skill install github/awesome-copilot documentation-writer</code></p>
-            <p><code>gh skill update --all</code></p>
-        </div>
-        
-        <div class="slide">
-            <h2>What's next</h2>
-            <p>Explore skills in github/awesome-copilot</p>
-            <p>Publish your team's skills with <code>gh skill publish</code></p>
-            <p>Build the skill you wish existed</p>
+            <p>Look at the publish workflow before the ecosystem gets crowded.</p>
         </div>
         
         <div class="navigation">
