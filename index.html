@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Agent Skills Carousel</title>
+    <title>GitHub Skills Carousel</title>
     <style>
         * {
             margin: 0;
@@ -141,57 +141,58 @@
         </div>
         
         <div class="slide active">
-            <h2>GitHub changed how agents learn</h2>
-            <p>Copilot can now load specialized skills for specific tasks.</p>
-            <p>Here's what that means for your workflow.</p>
+            <h2>GitHub just shipped skill management</h2>
+            <p>Agent skills now install like npm packages.</p>
+            <p>Here's what changed.</p>
         </div>
         
         <div class="slide">
-            <h2>What are Agent Skills</h2>
-            <p>Folders of instructions and scripts that teach Copilot specialized tasks.</p>
-            <p>Works with Copilot cloud agent, CLI, and VS Code agent mode.</p>
+            <h2>What is <code>gh skill</code></h2>
+            <p>Package manager for agent skills.</p>
+            <p>Install, update, and publish skills across GitHub Copilot, Claude Code, Cursor, and Codex.</p>
+            <p>Requires GitHub CLI v2.90.0+</p>
         </div>
         
         <div class="slide">
             <h2>Here's what changed</h2>
-            <p><strong>Before:</strong> Copilot had general capabilities</p>
-            <p><strong>Now:</strong> It loads task-specific expertise on demand</p>
-            <p>No more generic responses to specialized workflows.</p>
+            <p><strong>Before:</strong> Copy skill files manually</p>
+            <p><strong>Now:</strong> Install skills like packages</p>
+            <p>No more file copying like it's 2012.</p>
         </div>
         
         <div class="slide">
             <h2>In practice</h2>
-            <p>Skills live in <code>.github/skills</code> or <code>~/.copilot/skills</code></p>
-            <p>Copilot automatically loads relevant skills when working on tasks.</p>
-            <p>Each skill contains instructions, scripts, and resources.</p>
+            <p><code>gh skill install github/awesome-copilot documentation-writer</code></p>
+            <p>Pin to specific versions:</p>
+            <p><code>gh skill install github/awesome-copilot documentation-writer --pin v1.2.0</code></p>
         </div>
         
         <div class="slide">
             <h2>Why this matters</h2>
-            <p>GitHub is building an open standard for agent capabilities.</p>
-            <p>Teams can teach their agents company-specific workflows.</p>
-            <p>Skills work across multiple AI systems, not just Copilot.</p>
+            <p>Agent skills are instructions that shape what AI does in your codebase.</p>
+            <p>Now they have proper versioning, provenance tracking, and integrity checks.</p>
+            <p>Supply chain security for AI agents.</p>
         </div>
         
         <div class="slide">
             <h2>The bigger picture</h2>
-            <p>From: Generic AI assistance</p>
-            <p>To: Specialized, repeatable expertise</p>
-            <p>Agent Skills is an open standard used by multiple AI systems.</p>
+            <p>From: Sharing skills by copying files</p>
+            <p>To: Distributing skills with dependency management</p>
+            <p>Skills follow the open standard at agentskills.io</p>
         </div>
         
         <div class="slide">
             <h2>Try it now</h2>
-            <p>Check out skills in <code>anthropics/skills</code> and <code>github/awesome-copilot</code></p>
-            <p>Add skills to your project or home directory.</p>
-            <p>What specialized workflows will you teach your agents?</p>
+            <p><code>gh extension upgrade --all</code></p>
+            <p><code>gh skill install github/awesome-copilot documentation-writer</code></p>
+            <p><code>gh skill update --all</code></p>
         </div>
         
         <div class="slide">
             <h2>What's next</h2>
-            <p>Explore existing skills in the community repositories</p>
-            <p>Create custom skills for your team's workflows</p>
-            <p>Organization and enterprise-level skills coming soon</p>
+            <p>Explore skills in github/awesome-copilot</p>
+            <p>Publish your team's skills with <code>gh skill publish</code></p>
+            <p>Build the skill you wish existed</p>
         </div>
         
         <div class="navigation">
