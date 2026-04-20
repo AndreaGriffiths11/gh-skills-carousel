@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Skills - Social Media Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-accent: #030712;
+            --color-surface: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at top left, rgba(3, 7, 18, 0.06), transparent 55%),
+                linear-gradient(180deg, rgba(14, 165, 233, 0.08), transparent 65%);
+            color: #0f172a;
+            line-height: 1.6;
+            padding: 3rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+        
+        .instructions {
+            background: var(--color-surface);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .instructions h3 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .instructions ol {
+            color: #475569;
+            padding-left: 1.5rem;
+        }
+        
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card-preview {
+            background: var(--color-surface);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .card-preview:hover {
+            transform: translateY(-4px);
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .card-description {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1e293b;
+        }
+        
+        .btn-secondary {
+            background: #f8fafc;
+            color: var(--color-accent);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+        }
+        
+        .btn-secondary:hover {
+            background: #f1f5f9;
+        }
+        
+        .download-all {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .download-all .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">GitHub Skills Social Cards</h1>
+            <p class="subtitle">Self-contained cards optimized for LinkedIn and Instagram sharing</p>
+        </div>
+        
+        <div class="instructions">
+            <h3>📱 How to Use These Cards</h3>
+            <ol>
+                <li><strong>Click "Open Card"</strong> to view the full-size card (600x600px)</li>
+                <li><strong>Screenshot</strong> the card using your browser or OS screenshot tool</li>
+                <li><strong>Upload to LinkedIn/Instagram</strong> - perfect size for social media carousels</li>
+                <li><strong>No external links</strong> - everything is contained within each card</li>
+            </ol>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="card-preview">
+                <h3 class="card-title">01 / What are agent skills?</h3>
+                <p class="card-description">Introduction to instruction sets that teach AI coding agents specialized tasks.</p>
+                <div class="card-actions">
+                    <a href="social-card-01.html" class="btn btn-primary" target="_blank">Open Card</a>
+                    <a href="social-card-01.html" class="btn btn-secondary" download>Download</a>
+                </div>
+            </div>
+            
+            <div class="card-preview">
+                <h3 class="card-title">02 / Distribution Problem</h3>
+                <p class="card-description">How gh skill fixes the manual file copying problem plaguing agent workflows.</p>
+                <div class="card-actions">
+                    <a href="social-card-02.html" class="btn btn-primary" target="_blank">Open Card</a>
+                    <a href="social-card-02.html" class="btn btn-secondary" download>Download</a>
+                </div>
+            </div>
+            
+            <div class="card-preview">
+                <h3 class="card-title">03 / How It Works</h3>
+                <p class="card-description">Command examples showing how to install and update agent skills via CLI.</p>
+                <div class="card-actions">
+                    <a href="social-card-03.html" class="btn btn-primary" target="_blank">Open Card</a>
+                    <a href="social-card-03.html" class="btn btn-secondary" download>Download</a>
+                </div>
+            </div>
+            
+            <div class="card-preview">
+                <h3 class="card-title">04 / Supply Chain Hygiene</h3>
+                <p class="card-description">Security considerations and best practices for agent skill installation.</p>
+                <div class="card-actions">
+                    <a href="#" class="btn btn-primary" onclick="alert('Generate card 4 with the script!')">Open Card</a>
+                    <a href="#" class="btn btn-secondary" onclick="alert('Generate card 4 with the script!')">Download</a>
+                </div>
+            </div>
+            
+            <div class="card-preview">
+                <h3 class="card-title">05 / What Was Missing</h3>
+                <p class="card-description">The infrastructure layer that the SKILL.md pattern needed to scale properly.</p>
+                <div class="card-actions">
+                    <a href="#" class="btn btn-primary" onclick="alert('Generate card 5 with the script!')">Open Card</a>
+                    <a href="#" class="btn btn-secondary" onclick="alert('Generate card 5 with the script!')">Download</a>
+                </div>
+            </div>
+            
+            <div class="card-preview">
+                <h3 class="card-title">06 / Standards Before Speed</h3>
+                <p class="card-description">Building quality agent skills with fundamentals over flashy features.</p>
+                <div class="card-actions">
+                    <a href="#" class="btn btn-primary" onclick="alert('Generate card 6 with the script!')">Open Card</a>
+                    <a href="#" class="btn btn-secondary" onclick="alert('Generate card 6 with the script!')">Download</a>
+                </div>
+            </div>
+            
+            <div class="card-preview">
+                <h3 class="card-title">07 / Infrastructure Layer</h3>
+                <p class="card-description">Why agent skills represent the future of AI-assisted development infrastructure.</p>
+                <div class="card-actions">
+                    <a href="#" class="btn btn-primary" onclick="alert('Generate card 7 with the script!')">Open Card</a>
+                    <a href="#" class="btn btn-secondary" onclick="alert('Generate card 7 with the script!')">Download</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="download-all">
+            <button onclick="downloadAllCards()" class="btn btn-primary">
+                📱 Download All Cards Instructions
+            </button>
+        </div>
+        
+        <div class="instructions">
+            <h3>🎯 Perfect for Social Media</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>✅ <strong>600x600px</strong> - Optimized for Instagram and LinkedIn carousels</li>
+                <li>✅ <strong>Self-contained</strong> - All branding and context within each card</li>
+                <li>✅ <strong>Main Branch aesthetic</strong> - Consistent with your brand</li>
+                <li>✅ <strong>No external links</strong> - Screenshot-friendly design</li>
+                <li>✅ <strong>Professional typography</strong> - Inter font for maximum readability</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function downloadAllCards() {
+            alert(`📱 To download all cards:
+
+1. Use the Node.js script:
+   node generate-social-cards.js
+
+2. Or manually screenshot each card:
+   - Click "Open Card" for each one
+   - Use Cmd+Shift+4 (Mac) or Win+Shift+S (Windows)
+   - Save as 600x600px images
+
+3. Perfect for LinkedIn/Instagram carousels!
+
+Each card contains everything needed - no external context required.`);
+        }
+    </script>
+</body>
+</html>
