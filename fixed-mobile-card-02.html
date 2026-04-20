@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Skills Card 2 - Distribution Problem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at top left, rgba(3, 7, 18, 0.06), transparent 55%),
+                linear-gradient(180deg, rgba(14, 165, 233, 0.08), transparent 65%);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 24px 48px -40px rgba(15, 23, 42, 0.25);
+            backdrop-filter: blur(10px);
+            width: min(600px, calc(100vw - 40px));
+            height: min(600px, calc(100vh - 40px));
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .main-branch-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #030712;
+            letter-spacing: -0.025em;
+        }
+        
+        .card-number {
+            background: rgba(15, 23, 42, 0.08);
+            color: #030712;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+        
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .card-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #030712;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+        
+        .card-text {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .card-text strong {
+            color: #030712;
+            font-weight: 600;
+        }
+        
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(226, 232, 240, 0.6);
+            gap: 1rem;
+        }
+        
+        .footer-branding {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .skill-badge {
+            background: #030712;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .card {
+                padding: 2rem;
+                width: calc(100vw - 30px);
+                height: calc(100vw - 30px);
+                max-height: calc(100vh - 30px);
+            }
+            
+            .main-branch-logo {
+                font-size: 1.125rem;
+            }
+            
+            .card-number {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+            }
+            
+            .card-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .card-text {
+                font-size: 1.125rem;
+            }
+            
+            .card-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+            
+            .skill-badge {
+                align-self: flex-end;
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .footer-branding {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="main-branch-logo">Main Branch</div>
+            <div class="card-number">02 / 07</div>
+        </div>
+        
+        <div class="card-content">
+            <h2 class="card-title">The missing piece was distribution</h2>
+            <div class="card-text">
+                <strong>Copying files manually like it's 2012.</strong>
+            </div>
+            <div class="card-text">
+                gh skill fixes that. No more hunting through GitHub repos, copying markdown files, or managing versions by hand.
+            </div>
+        </div>
+        
+        <div class="card-footer">
+            <div class="footer-branding">mainbranch.dev • gh skill shipped April 16</div>
+            <div class="skill-badge">GitHub CLI v2.90.0+</div>
+        </div>
+    </div>
+</body>
+</html>
