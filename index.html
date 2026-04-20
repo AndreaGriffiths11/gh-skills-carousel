@@ -18,6 +18,33 @@
             line-height: 1.4;
         }
         
+        .download-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            transition: transform 0.2s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -82,8 +109,6 @@
             display: inline-block;
             margin: 4px 2px;
         }
-        
-
         
         .highlight {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -163,9 +188,14 @@
             }
         }
     </style>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
-    <div class="card-grid">
+    <div class="download-section">
+        <button id="downloadAll" class="download-btn">📥 Download All Cards as PNGs</button>
+    </div>
+    
+    <div class="card-grid" id="cardGrid">
         <div class="card">
             <div class="card-content">
                 <div>
@@ -244,5 +274,79 @@
             <div class="github-badge">Fundamentals First</div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('downloadAll').addEventListener('click', async function() {
+            const button = this;
+            const originalText = button.textContent;
+            
+            // Update button text
+            button.textContent = 'Generating PNGs...';
+            button.disabled = true;
+            
+            const cards = document.querySelectorAll('.card');
+            const zip = new JSZip();
+            
+            try {
+                for (let i = 0; i < cards.length; i++) {
+                    const card = cards[i];
+                    
+                    // Update button with progress
+                    button.textContent = `Capturing card ${i + 1} of ${cards.length}...`;
+                    
+                    // Wait a moment for the update
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    
+                    // Capture the card
+                    const canvas = await html2canvas(card, {
+                        backgroundColor: 'white',
+                        scale: 2,
+                        useCORS: true,
+                        logging: false,
+                        width: card.offsetWidth,
+                        height: card.offsetHeight
+                    });
+                    
+                    // Convert to blob
+                    const blob = await new Promise(resolve => {
+                        canvas.toBlob(resolve, 'image/png', 1.0);
+                    });
+                    
+                    // Add to zip with descriptive filename
+                    const cardTitle = card.querySelector('h2').textContent
+                        .replace(/[^a-zA-Z0-9]/g, '_')
+                        .replace(/_+/g, '_')
+                        .replace(/^_|_$/g, '')
+                        .toLowerCase();
+                    
+                    zip.file(`${String(i + 1).padStart(2, '0')}_${cardTitle}.png`, blob);
+                }
+                
+                // Generate and download zip
+                button.textContent = 'Creating download...';
+                const zipBlob = await zip.generateAsync({ type: 'blob' });
+                
+                // Create download link
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(zipBlob);
+                link.download = 'gh-skill-cards.zip';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Clean up
+                URL.revokeObjectURL(link.href);
+                
+            } catch (error) {
+                console.error('Error generating PNGs:', error);
+                alert('Error generating PNGs. Please try again.');
+            } finally {
+                // Reset button
+                button.textContent = originalText;
+                button.disabled = false;
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </body>
 </html>
