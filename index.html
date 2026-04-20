@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Skills Cards</title>
+    <title>GitHub Skills - Ship better code with agent skills</title>
+    <meta name="description" content="gh skill shipped April 16. Package manager for agent instructions. Requires GitHub CLI v2.90.0+ (public preview).">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="GitHub Skills - Ship better code with agent skills">
+    <meta property="og:description" content="gh skill shipped April 16. Package manager for agent instructions. Distribution solved for AI coding agents.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andreagriffiths11.github.io/gh-skills-carousel/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --color-accent: #030712;
+            --color-accent-strong: #1e293b;
+            --color-surface: rgba(255, 255, 255, 0.95);
+            --color-border: rgba(15, 23, 42, 0.08);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,363 +31,428 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f6f8fa;
-            padding: 40px 20px;
-            line-height: 1.4;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at top left, rgba(3, 7, 18, 0.06), transparent 55%),
+                linear-gradient(180deg, rgba(14, 165, 233, 0.08), transparent 65%);
+            color: #0f172a;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
         }
         
-        .download-section {
+        .container {
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+        }
+        
+        .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 3rem;
         }
         
-        .download-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-            transition: transform 0.2s ease;
+        .badge {
+            display: inline-block;
+            background: var(--color-border);
+            color: var(--color-accent);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
         }
         
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
         }
         
-        .download-btn:active {
-            transform: translateY(0);
-        }
-        
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+        .subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
             margin: 0 auto;
         }
         
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 50px 40px 120px 40px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            border: 1px solid #e1e4e8;
+        .carousel-container {
+            background: var(--color-surface);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 24px 48px -40px rgba(15, 23, 42, 0.25);
+            backdrop-filter: blur(10px);
             position: relative;
-            min-height: 450px;
-            text-align: center;
+            overflow: hidden;
+            min-height: 500px;
         }
         
-        .card::before {
-            content: '';
+        .slide {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            border-radius: 16px 16px 0 0;
-        }
-        
-        .card-content {
-            display: flex;
-            flex-direction: column;
+            width: 100%;
             height: 100%;
-            min-height: 350px;
-            justify-content: flex-start;
-        }
-        
-        .card h2 {
-            font-size: 2.2rem;
-            color: #24292e;
-            margin-bottom: 25px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        .card p {
-            font-size: 1.3rem;
-            color: #586069;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .card code {
-            background: #f6f8fa;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-family: 'SF Mono', Consolas, monospace;
-            color: #e36209;
-            font-size: 1.1rem;
-            border: 1px solid #e1e4e8;
-            display: inline-block;
-            margin: 4px 2px;
-        }
-        
-        .highlight {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-        
-        .code-block {
-            background: #24292e;
-            color: #f6f8fa;
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-family: 'SF Mono', Consolas, monospace;
-            font-size: 1rem;
-            text-align: left;
-            line-height: 1.4;
-        }
-        
-        .github-badge {
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #24292e;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            z-index: 10;
-        }
-        
-        .footer-badge {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #0066cc;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            z-index: 10;
-        }
-        
-        /* Special layout for card 4 with code blocks */
-        .card-4 .card-content {
-            justify-content: space-between;
-        }
-        
-        .card-4 h2 {
-            margin-bottom: 20px;
-        }
-        
-        .card-4 .code-section {
-            flex-grow: 1;
+            padding: 3rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.6s ease;
         }
         
-        .card-4 .code-block {
-            margin: 8px 0;
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
         }
         
-        .card-4 p {
-            margin-top: 15px;
-            margin-bottom: 0;
+        .slide.prev {
+            transform: translateX(-100px);
+        }
+        
+        .slide-number {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .slide-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .slide-content {
+            font-size: 1.125rem;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .slide-content strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        
+        .slide-cta {
+            display: inline-flex;
+            align-items: center;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.875rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+        
+        .slide-cta:hover {
+            background: var(--color-accent-strong);
+            transform: translateY(-2px);
+        }
+        
+        .code-snippet {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+            font-size: 0.875rem;
+            margin: 1rem 0;
+            color: var(--color-accent);
+        }
+        
+        .navigation {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+        
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background: var(--color-accent);
+            transform: scale(1.25);
+        }
+        
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--color-surface);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--color-accent);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-arrow:hover {
+            background: #f8fafc;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .nav-arrow.prev {
+            left: 1rem;
+        }
+        
+        .nav-arrow.next {
+            right: 1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        
+        .footer a {
+            color: var(--color-accent);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+            color: var(--color-accent-strong);
         }
         
         @media (max-width: 768px) {
-            .card-grid {
-                grid-template-columns: 1fr;
+            .title {
+                font-size: 2rem;
             }
             
-            .card {
-                padding: 40px 30px 110px 30px;
-                min-height: 450px;
+            .carousel-container {
+                padding: 2rem;
             }
             
-            .card h2 {
-                font-size: 1.8rem;
+            .slide {
+                padding: 2rem;
             }
             
-            .card p {
-                font-size: 1.1rem;
+            .slide-title {
+                font-size: 1.5rem;
+            }
+            
+            .nav-arrow {
+                display: none;
             }
         }
     </style>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
-    <div class="download-section">
-        <button id="downloadAll" class="download-btn">📥 Download All Cards as PNGs</button>
-    </div>
-    
-    <div class="card-grid" id="cardGrid">
-        <div class="card">
-            <div class="card-content">
-                <div>
-                    <h2><span class="highlight">gh skill</span> shipped April 16</h2>
-                    <p>Package manager for agent instructions.</p>
-                    <p>Requires GitHub CLI v2.90.0+ (public preview).</p>
-                    <p>This one's headed somewhere good.</p>
-                </div>
-            </div>
-            <div class="github-badge">GitHub CLI v2.90.0+</div>
-            <div class="footer-badge">mainbranch.dev</div>
+    <div class="container">
+        <div class="header">
+            <div class="badge">GitHub CLI v2.90.0+</div>
+            <h1 class="title">gh skill shipped April 16</h1>
+            <p class="subtitle">Package manager for agent instructions. Distribution solved for AI coding agents.</p>
         </div>
         
-        <div class="card">
-            <div class="card-content">
-                <div>
-                    <h2>What are <span class="highlight">agent skills</span></h2>
-                    <p>Instruction sets that teach AI coding agents specialized tasks.</p>
-                    <p>Work across Copilot, Claude Code, Cursor, and Codex.</p>
+        <div class="carousel-container">
+            <div class="slide active">
+                <div class="slide-number">01 / 07</div>
+                <h2 class="slide-title">What are agent skills?</h2>
+                <div class="slide-content">
+                    <strong>Instruction sets that teach AI coding agents specialized tasks.</strong>
+                    <br><br>
+                    Work across Copilot, Claude Code, Cursor, and Codex. Think of them as focused documentation that agents can actually follow.
+                </div>
+                <a href="https://agents.md" class="slide-cta" target="_blank">Agent Skills Spec →</a>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-number">02 / 07</div>
+                <h2 class="slide-title">The missing piece was distribution</h2>
+                <div class="slide-content">
+                    <strong>Copying files manually like it's 2012.</strong>
+                    <br><br>
+                    gh skill fixes that. No more hunting through GitHub repos, copying markdown files, or managing versions by hand.
                 </div>
             </div>
-            <div class="github-badge">Agent Skills Spec</div>
-            <div class="footer-badge">mainbranch.dev</div>
+            
+            <div class="slide">
+                <div class="slide-number">03 / 07</div>
+                <h2 class="slide-title">How it works</h2>
+                <div class="slide-content">
+                    Install skills from any GitHub repo:
+                    <div class="code-snippet">gh skill install github/awesome-copilot documentation-writer</div>
+                    Keep everything updated:
+                    <div class="code-snippet">gh skill update --all</div>
+                    <strong>Pin to tags or commits. Provenance travels with the file.</strong>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-number">04 / 07</div>
+                <h2 class="slide-title">Supply chain hygiene</h2>
+                <div class="slide-content">
+                    <strong>Skills aren't verified by GitHub and may contain prompt injections.</strong>
+                    <br><br>
+                    Use <code>gh skill preview</code> before installing. Same hygiene as npm packages, newer attack vectors.
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-number">05 / 07</div>
+                <h2 class="slide-title">What was missing</h2>
+                <div class="slide-content">
+                    <strong>The SKILL.md pattern has been spreading across the agent ecosystem.</strong>
+                    <br><br>
+                    What we needed: proper tooling for version management, dependency graphs, and integrity checks.
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-number">06 / 07</div>
+                <h2 class="slide-title">Standards before speed</h2>
+                <div class="slide-content">
+                    <strong>Start with skills from github/awesome-copilot.</strong>
+                    <br><br>
+                    Build what you wish existed. Every time. Quality over quantity, fundamentals over features.
+                </div>
+                <a href="https://github.com/github/awesome-copilot" class="slide-cta" target="_blank">Awesome Copilot →</a>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-number">07 / 07</div>
+                <h2 class="slide-title">This one's headed somewhere good</h2>
+                <div class="slide-content">
+                    <strong>Agent skills are the infrastructure layer for AI-assisted development.</strong>
+                    <br><br>
+                    We're building the distribution, you build the skills. Ship better code with fundamentals that scale.
+                </div>
+                <a href="https://mainbranch.dev" class="slide-cta" target="_blank">Main Branch Newsletter →</a>
+            </div>
+            
+            <div class="navigation">
+                <span class="nav-dot active" data-slide="0"></span>
+                <span class="nav-dot" data-slide="1"></span>
+                <span class="nav-dot" data-slide="2"></span>
+                <span class="nav-dot" data-slide="3"></span>
+                <span class="nav-dot" data-slide="4"></span>
+                <span class="nav-dot" data-slide="5"></span>
+                <span class="nav-dot" data-slide="6"></span>
+            </div>
+            
+            <div class="nav-arrow prev" onclick="previousSlide()">‹</div>
+            <div class="nav-arrow next" onclick="nextSlide()">›</div>
         </div>
         
-        <div class="card">
-            <div class="card-content">
-                <div>
-                    <h2>The missing piece was <span class="highlight">distribution</span></h2>
-                    <p>Copying files manually like it's 2012.</p>
-                    <p><code>gh skill</code> fixes that.</p>
-                </div>
-            </div>
-            <div class="github-badge">No More Manual Copying</div>
-            <div class="footer-badge">mainbranch.dev</div>
-        </div>
-        
-        <div class="card card-4">
-            <div class="card-content">
-                <h2>How it works</h2>
-                <div class="code-section">
-                    <div class="code-block">gh skill install github/awesome-copilot documentation-writer</div>
-                    <div class="code-block">gh skill update --all</div>
-                    <p>Pin to tags or commits. Provenance travels with the file.</p>
-                </div>
-            </div>
-            <div class="footer-badge">mainbranch.dev</div>
-        </div>
-        
-        <div class="card">
-            <div class="card-content">
-                <div>
-                    <h2>Supply chain <span class="highlight">hygiene</span></h2>
-                    <p>Skills aren't verified by GitHub and may contain prompt injections.</p>
-                    <p>Use <code>gh skill preview</code> before installing.</p>
-                    <p>Same hygiene as npm packages, newer attack vectors.</p>
-                </div>
-            </div>
-            <div class="footer-badge">mainbranch.dev</div>
-        </div>
-        
-        <div class="card">
-            <div class="card-content">
-                <div>
-                    <h2>What was <span class="highlight">missing</span></h2>
-                    <p>The SKILL.md pattern has been spreading across the agent ecosystem.</p>
-                    <p>Proper tooling—version management, dependency graphs, integrity checks.</p>
-                </div>
-            </div>
-            <div class="github-badge">Infrastructure Layer</div>
-            <div class="footer-badge">mainbranch.dev</div>
-        </div>
-        
-        <div class="card">
-            <div class="card-content">
-                <div>
-                    <h2><span class="highlight">Standards</span> before speed</h2>
-                    <p>Start with skills from <code>github/awesome-copilot</code></p>
-                    <p>Build what you wish existed.</p>
-                    <p><strong>Every time.</strong></p>
-                </div>
-            </div>
-            <div class="github-badge">Fundamentals First</div>
-            <div class="footer-badge">mainbranch.dev</div>
+        <div class="footer">
+            <p>From <a href="https://mainbranch.dev">Main Branch</a> • Fundamentals first, always</p>
         </div>
     </div>
 
     <script>
-        document.getElementById('downloadAll').addEventListener('click', async function() {
-            const button = this;
-            const originalText = button.textContent;
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const totalSlides = slides.length;
+        
+        function showSlide(n) {
+            // Remove active class from all slides and dots
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'prev');
+            });
+            dots.forEach(dot => dot.classList.remove('active'));
             
-            // Update button text
-            button.textContent = 'Generating PNGs...';
-            button.disabled = true;
-            
-            const cards = document.querySelectorAll('.card');
-            const zip = new JSZip();
-            
-            try {
-                for (let i = 0; i < cards.length; i++) {
-                    const card = cards[i];
-                    
-                    // Update button with progress
-                    button.textContent = `Capturing card ${i + 1} of ${cards.length}...`;
-                    
-                    // Wait a moment for the update
-                    await new Promise(resolve => setTimeout(resolve, 100));
-                    
-                    // Capture the card
-                    const canvas = await html2canvas(card, {
-                        backgroundColor: 'white',
-                        scale: 2,
-                        useCORS: true,
-                        logging: false,
-                        width: card.offsetWidth,
-                        height: card.offsetHeight
-                    });
-                    
-                    // Convert to blob
-                    const blob = await new Promise(resolve => {
-                        canvas.toBlob(resolve, 'image/png', 1.0);
-                    });
-                    
-                    // Add to zip with descriptive filename
-                    const cardTitle = card.querySelector('h2').textContent
-                        .replace(/[^a-zA-Z0-9]/g, '_')
-                        .replace(/_+/g, '_')
-                        .replace(/^_|_$/g, '')
-                        .toLowerCase();
-                    
-                    zip.file(`${String(i + 1).padStart(2, '0')}_${cardTitle}.png`, blob);
-                }
-                
-                // Generate and download zip
-                button.textContent = 'Creating download...';
-                const zipBlob = await zip.generateAsync({ type: 'blob' });
-                
-                // Create download link
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(zipBlob);
-                link.download = 'gh-skill-cards.zip';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                
-                // Clean up
-                URL.revokeObjectURL(link.href);
-                
-            } catch (error) {
-                console.error('Error generating PNGs:', error);
-                alert('Error generating PNGs. Please try again.');
-            } finally {
-                // Reset button
-                button.textContent = originalText;
-                button.disabled = false;
+            // Add prev class to current slide before transition
+            if (slides[currentSlide]) {
+                slides[currentSlide].classList.add('prev');
             }
+            
+            // Update current slide
+            currentSlide = n;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            
+            // Show new slide
+            setTimeout(() => {
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }, 50);
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Auto-advance slides
+        setInterval(nextSlide, 7000);
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+        
+        // Touch/swipe support
+        let startX = null;
+        
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            if (startX === null) return;
+            
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    previousSlide();
+                }
+            }
+            
+            startX = null;
         });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </body>
 </html>
