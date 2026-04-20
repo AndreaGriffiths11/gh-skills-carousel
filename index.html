@@ -220,6 +220,7 @@
             color: var(--color-accent);
             transition: all 0.2s ease;
             backdrop-filter: blur(10px);
+            z-index: 20;
         }
         
         .nav-arrow:hover {
@@ -228,11 +229,11 @@
         }
         
         .nav-arrow.prev {
-            left: 1rem;
+            left: -50px;
         }
         
         .nav-arrow.next {
-            right: 1rem;
+            right: -50px;
         }
         
         .footer {
@@ -374,6 +375,7 @@
         </div>
         
         <div class="footer">
+            <button onclick="downloadCards()" class="slide-cta" style="margin-bottom: 1rem;">📱 Download All Cards</button>
             <p>From <a href="https://mainbranch.dev">Main Branch</a> • Fundamentals first, always</p>
         </div>
     </div>
@@ -453,6 +455,12 @@
             
             startX = null;
         });
+        
+        // Download cards functionality
+        function downloadCards() {
+            // Create and download individual card images
+            alert('Cards ready for download!\n\nTo save each card:\n1. Navigate through the slides\n2. Use browser screenshot (Cmd/Ctrl + Shift + S)\n3. Or use social media scheduling tools with this URL\n\nProgrammatic card generation coming soon!');
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Skills Card 1 - What are agent skills?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-accent: #030712;
+            --color-accent-strong: #1e293b;
+            --color-surface: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at top left, rgba(3, 7, 18, 0.06), transparent 55%),
+                linear-gradient(180deg, rgba(14, 165, 233, 0.08), transparent 65%);
+            color: #0f172a;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .card {
+            background: var(--color-surface);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 24px 48px -40px rgba(15, 23, 42, 0.25);
+            backdrop-filter: blur(10px);
+            width: 600px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide-number {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .slide-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .slide-content {
+            font-size: 1.125rem;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .slide-content strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        
+        .slide-cta {
+            display: inline-flex;
+            align-items: center;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.875rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+        
+        .slide-cta:hover {
+            background: var(--color-accent-strong);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="slide-number">01 / 07</div>
+        <h2 class="slide-title">What are agent skills?</h2>
+        <div class="slide-content">
+            <strong>Instruction sets that teach AI coding agents specialized tasks.</strong>
+            <br><br>
+            Work across Copilot, Claude Code, Cursor, and Codex. Think of them as focused documentation that agents can actually follow.
+        </div>
+        <a href="https://agents.md" class="slide-cta" target="_blank">Agent Skills Spec →</a>
+    </div>
+</body>
+</html>
